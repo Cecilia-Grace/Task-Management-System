@@ -32,7 +32,7 @@ def main():
             # view_pending_tasks(tasks)
             user_input = input("Task: ")
                    
-            if not user_input:
+            if len(user_input) == 0:
                 print("Enter an index")
                 continue
             
