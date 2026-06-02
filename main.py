@@ -37,7 +37,7 @@ def main():
                 continue
             
             if user_input.isdigit():
-                selected_task = int(user_input)
+                selected_task = int(user_input) -1
                 
                 if selected_task >= len(tasks) or selected_task < 0:
                     print("Enter a valid index")

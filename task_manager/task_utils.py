@@ -65,5 +65,8 @@ def calculate_progress(tasks=tasks):
             completed_tasks +=1
         else:
             uncompleted_tasks +=1
+    
+    total_tasks = completed_tasks + uncompleted_tasks
+    progress = (completed_tasks/total_tasks) * 100
    
-    return f"Completed tasks: {completed_tasks}|| Uncompleted tasks: {uncompleted_tasks}"
+    return progress
