@@ -1,5 +1,5 @@
 # Import functions from task_manager.task_utils package
-from task_manager.task_utils import add_task, view_pending_tasks, mark_task_as_complete, tasks, calculate_progress
+from task_utils import add_task, view_pending_tasks, mark_task_as_complete, tasks, calculate_progress
 
 task = {"title": "Groceries",
         "description": "Shop at Market Basket for food", 

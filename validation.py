@@ -2,12 +2,12 @@ from datetime import datetime
 
 def validate_task_title(title):
     if len(title.strip()) == 0:
-        return "Please input the task title"
+        raise ValueError("Please input the task title")
     return None
 
 def validate_task_description(description):
     if len(description.strip()) == 0:
-        return "Please input task description"
+        raise ValueError("Please input task description")
     return None
 
 def validate_due_date(due_date):
@@ -19,7 +19,7 @@ def validate_due_date(due_date):
     try:
         datetime.strptime(due_date, "%Y-%m-%d")
     except ValueError:
-        return "Enter correct date format (yyyy-mm-dd)"    
+        raise ValueError("Enter correct date format (yyyy-mm-dd)" )   
        
     return None
 
