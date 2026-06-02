@@ -22,8 +22,8 @@ def validate_due_date(due_date):
     except ValueError:
         return "Enter correct date format (yyyy-mm-dd)" 
        
-    if parsed_date < today:
-        return "Cannot enter past date"
+    # if parsed_date < today:
+    #     return "Cannot enter past date"
     
     return None
 
