@@ -29,10 +29,9 @@ def main():
 
             
         elif choice == "2":
-            view_pending_tasks(tasks)
-            user_input = input("Enter the index of the task you want to mark as complete: ")
-            
-            
+            # view_pending_tasks(tasks)
+            user_input = input("Task: ")
+                   
             if not user_input:
                 print("Enter an index")
                 continue
