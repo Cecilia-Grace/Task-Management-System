@@ -37,7 +37,7 @@ def mark_task_as_complete(index, tasks=tasks):
     
     target_task["completed"] = True
         
-    return f"{target_task['title']} has been marked as complete"
+    return "Task marked as complete!"
 
 # Implement view_pending_tasks function
 def view_pending_tasks(tasks=tasks):
@@ -54,7 +54,7 @@ def view_pending_tasks(tasks=tasks):
 
 # Implement calculate_progress function
 def calculate_progress(tasks=tasks):
-    if not tasks:
+    if len(tasks) == 0:
         return "No tasks available"
     
     completed_tasks = 0

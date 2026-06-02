@@ -1,30 +1,26 @@
 from datetime import datetime
 
 def validate_task_title(title):
-    if not title:
+    if title is None or len(title.strip()) == 0:
         return "Please input the task title"
     return None
 
 def validate_task_description(description):
-    if not description:
+    if description is None or len(description.strip()) == 0:
         return "Please input task description"
     return None
 
 def validate_due_date(due_date):
     date_format = "%Y-%m-%d"
-    today = datetime.today().date()
     
-    if not due_date:
+    if due_date is None or len(due_date.strip()) == 0:
         return "Input a due date"
     
     try:
-        parsed_date = datetime.strptime(due_date, date_format).date()
+        datetime.strptime(due_date, date_format)
     except ValueError:
         return "Enter correct date format (yyyy-mm-dd)" 
        
-    # if parsed_date < today:
-    #     return "Cannot enter past date"
-    
     return None
 
 
