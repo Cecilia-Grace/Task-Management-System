@@ -6,22 +6,13 @@ from task_manager.validation import validate_due_date, validate_task_description
 tasks = []
 # Implement add_task function
 def add_task(title, description, due_date):
-    title_error = validate_task_title(title)
-    description_error = validate_task_description(description)
-    # due_date_error = validate_due_date(due_date)
-    
-    if title_error:
-        return title_error
-    
-    if description_error:
-        return description_error
-    
     try:
-        due_date_error = validate_due_date(due_date)
-        if due_date_error:
-            return due_date_error
-    except ValueError:
-        return "Enter correct date format (yyyy-mm-dd)"
+        validate_task_title(title)
+        validate_task_description(description)
+        validate_due_date(due_date)
+        
+    except ValueError as e:
+        return str(e)
     
     new_task = {
         "title": title,
