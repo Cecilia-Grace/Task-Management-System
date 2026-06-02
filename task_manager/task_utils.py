@@ -8,7 +8,7 @@ tasks = []
 def add_task(title, description, due_date):
     title_error = validate_task_title(title)
     description_error = validate_task_description(description)
-    due_date_error = validate_due_date(due_date)
+    # due_date_error = validate_due_date(due_date)
     
     if title_error:
         return title_error
@@ -16,8 +16,12 @@ def add_task(title, description, due_date):
     if description_error:
         return description_error
     
-    if due_date_error:
-        return due_date_error
+    try:
+        due_date_error = validate_due_date(due_date)
+        if due_date_error:
+            return due_date_error
+    except ValueError:
+        return "Enter correct date format (yyyy-mm-dd)"
     
     new_task = {
         "title": title,
@@ -66,7 +70,6 @@ def calculate_progress(tasks=tasks):
         else:
             uncompleted_tasks +=1
     
-    total_tasks = completed_tasks + uncompleted_tasks
-    progress = (completed_tasks/total_tasks) * 100
+    progress = (completed_tasks/len(tasks)) * 100
    
     return progress

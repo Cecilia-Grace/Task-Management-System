@@ -16,10 +16,8 @@ def validate_due_date(due_date):
     if due_date is None or len(due_date.strip()) == 0:
         return "Input a due date"
     
-    try:
-        datetime.strptime(due_date, date_format)
-    except ValueError:
-        return "Enter correct date format (yyyy-mm-dd)" 
+    datetime.strptime(due_date, date_format)
+    
        
     return None
 
